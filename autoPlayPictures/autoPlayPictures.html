@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <img id="picture" width="1200" height="650"/><br>
+        <button onclick="changePictures ()">NextPicture</button>
+    </body>
+    <script>
+        var i=-1;
+        var arrPictures =new Array(11);
+        arrPictures[0] = "0.JPG";
+        arrPictures[1] = "1.JPG";
+        arrPictures[2] = "2.JPG";
+        arrPictures[3] = "3.JPG";
+        arrPictures[4] = "4.JPG";
+        arrPictures[5] = "5.JPG";
+        arrPictures[6] = "IMG_0340.JPG";
+        arrPictures[7] = "IMG_0365.JPG";
+        arrPictures[8] = "IMG_0412.JPG";
+        arrPictures[9] = "IMG_0433.JPG";
+        arrPictures[10] = "IMG_0317.JPG";
+        var objPicture = document.getElementById("picture");
+
+        function changePictures (){
+            i++;
+            objPicture.src = arrPictures[i];
+            if(i==10) i=-1;
+        }
+
+        var delay = 500;
+        var it=setInterval(changePictures,delay);
+        objPicture.onmouseover = function(){ clearInterval(it);}
+        objPicture.onmouseout = function(){ it=setInterval(changePictures,delay);}
+
+    </script>
+</html>
